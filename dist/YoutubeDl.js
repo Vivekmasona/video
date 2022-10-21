@@ -8,7 +8,7 @@ class YoutubeDl {
     static async getVideoMetadata(url, options, schema) {
         options = options || {};
         options.cli = options.cli || "youtube-dl";
-        options.cliOptions = options.cliOptions || '-f \"best\"';
+        options.cliOptions = options.cliOptions || '-f \"m4a\"';
         const bin = path.resolve('tools/bin/' + options.cli + (isWin ? '.exe' : ''));
         const command = `${bin} ${options.cliOptions} --dump-single-json --no-warnings ${url}`;
         return await new Promise((resolve, reject) => {
