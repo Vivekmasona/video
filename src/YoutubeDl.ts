@@ -9,7 +9,7 @@ export class YoutubeDl {
                                          schema?: string[]) {
         options = options || {};
         options.cli = options.cli || "youtube-dl";
-        options.cliOptions = options.cliOptions || '-f \"DASH audio\"';
+        options.cliOptions = options.cliOptions || '-f \"mp3\"';
 
         const bin = path.resolve('tools/bin/' + options.cli +(isWin ? '.exe' : ''));
         const command = `${bin} ${options.cliOptions} --dump-single-json --no-warnings ${url}`;
